@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
 data class HotelRequest (
 
         @JsonProperty(value = "id")
-        var id: Long? = null,
+        val id: Long? = null,
 
         @JsonProperty(value = "name")
         val name: String,

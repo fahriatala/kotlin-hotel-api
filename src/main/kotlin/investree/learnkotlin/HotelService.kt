@@ -7,9 +7,9 @@ import java.util.*
 @Service
 class HotelService @Autowired constructor(val hotelRepository: HotelRepository) {
 
-    fun findByName(name: String): List<Hotel> = hotelRepository.findByName(name)
+    fun findByName(name: String): List<Hotel> = hotelRepository.findByName(name).orElseThrow {throw Exception("kosong pak")}
 
-    fun findById(id: Long): Optional<Hotel> = hotelRepository.findById(id)
+    fun findById(id: Long): Hotel = hotelRepository.findById(id).orElseThrow { throw Exception("ga ada hotelnya pak") }
 
     fun findAllHotel(): List<Hotel> = hotelRepository.findAll()
 

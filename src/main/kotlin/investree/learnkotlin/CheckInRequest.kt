@@ -8,6 +8,6 @@ data class CheckInRequest(
         val hotelId: Long,
 
         @JsonProperty(value = "guests")
-        val guests: Int
+        val guests: Int = 0
 
 )
